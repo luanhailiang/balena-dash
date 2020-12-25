@@ -19,5 +19,8 @@ COPY launch.sh /home/chromium/
 COPY fonts/* /usr/share/fonts/truetype/
 # replace command that runs in start script
 COPY alt_start.sh /usr/src/app/
+
+RUN mv /etc/localtime /etc/localtime.bak
+RUN ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN sed -i '$d' /usr/src/app/start.sh
 RUN echo ". alt_start.sh"  >> /usr/src/app/start.sh
