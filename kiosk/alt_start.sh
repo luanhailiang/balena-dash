@@ -7,7 +7,7 @@ if [ ! -z ${CONTROL_TV+x} ] && [ "$CONTROL_TV" -eq "1" ]
 fi
 
 
-cd /TwitterColorEmoji-SVGinOT-Linux-13.0.1 && ./install.sh && cd ..
+apt-get install ttf-bitstream-vera
 
 cd /home/chromium/tohora && ./tohora 8080 /home/chromium/launch.sh &
 
